@@ -6,7 +6,7 @@
 <script type="text/javascript">
 export default {
   middleware: async (ctx) => {
-    console.log('layout middleware');
+    // console.log('layout middleware');
   }
 }
 </script>

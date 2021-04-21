@@ -17,12 +17,17 @@ module.exports = merge(base, {
       'create-api': './create-api-server.js'
     }
   },
-  // https://webpack.js.org/configuration/externals/#externals
-  // https://github.com/liady/webpack-node-externals
   externals: nodeExternals({
-    // do not externalize CSS files in case we need to import it from a dep
     whitelist: /\.css$/
   }),
+  module: {
+    rules: [
+      {
+        test: /\.styl(us)?$/,
+        use: ['vue-style-loader', 'css-loader', 'stylus-loader']
+      },
+    ]
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),

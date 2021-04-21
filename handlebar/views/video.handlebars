@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="../../assets/js/rem.js"></script>
+    <link rel="stylesheet" href="../../assets/css/master.css">
+</head>
+
+<body>
+  <div class="container">
+    {{#each BBM50AKDwangning}}
+      <div>
+      <section
+        id="VA01VOFIH"
+        class="m_article list-item js-newlist-app clearfix"
+        data-param="VA01VOFIH"
+      >
+        <a target="_blank" href="{{url}}">
+          <div class="m_article_img">
+            <div class="m_article_mark mark_new">视频</div>
+            <img src="{{imgsrc}}" />
+          </div>
+          <div class="m_article_info">
+            <div class="m_article_title">
+              <span>{{ title }}</span>
+            </div>
+            <div class="m_article_desc clearfix">
+              <div class="m_article_desc_l">
+                <span class="m_article_time">3天前</span>
+              </div>
+              <div class="m_article_desc_r">
+                <div class="left_hands_desc">
+                  <span class="iconfont"></span>{{ commentCount }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </section>
+    </div>
+    {{/each}}
+  </div>
+</body>
+</html>

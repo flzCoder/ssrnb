@@ -12,10 +12,10 @@ export default nuxtConfig => ({
     context.req.reqEndTime = +new Date()
 
     console.log('----------------analysis s-------------------------');
-    console.log('reqStartTime', context.req.reqStartTime);
-    console.log('renderStartTime', context.req.renderStartTime);
-    console.log('renderEndTime', context.req.renderEndTime);
-    console.log('reqEndTime', context.req.reqEndTime);
+    // console.log('reqStartTime', context.req.reqStartTime);
+    // console.log('renderStartTime', context.req.renderStartTime);
+    // console.log('renderEndTime', context.req.renderEndTime);
+    // console.log('reqEndTime', context.req.reqEndTime);
     console.log('nuxt:render:duration', context.req.renderEndTime-context.req.renderStartTime);
     console.log('nuxt:http:duration', context.req.reqEndTime-context.req.reqStartTime);
     console.log('----------------analysis e---------------------- --');

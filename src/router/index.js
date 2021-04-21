@@ -9,7 +9,7 @@ export function createRouter () {
   return new Router({
     mode: 'history',
     routes: [
-      { path: '/video/:id', name:'video', component: video },
+      { path: '/vuessr/video/:id', name:'video', component: video },
     ]
   })
 }
