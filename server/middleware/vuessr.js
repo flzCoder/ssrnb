@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const LRU = require('lru-cache');
 const { createBundleRenderer } = require('vue-server-renderer');
+const { sendToVdruid } = require('../../utils/analysis.js')
 const resolveFile = file => path.resolve(__dirname, file);
 const bundle = require(`../../dist/vue-ssr-server-bundle.json`);
 const clientManifest = require(`../../dist/vue-ssr-client-manifest.json`);
@@ -44,8 +45,13 @@ router.use((req, res, next) => {
       let renderEnd = Date.now()
       res.send(`${html}`);
       let reqEnd = Date.now()
-      console.log('vuessr: render time:', renderEnd-renderStart);
-      console.log('vuessr: req time:', reqEnd-reqStart)
+      let render = renderEnd-renderStart
+      let total = reqEnd-reqStart
+      console.log('----------------analysis s-------------------------');
+      console.log('vuessr:render:duration:', render);
+      console.log('vuessr:http:duration:', total);
+      sendToVdruid(total, render)
+      console.log('----------------analysis e---------------------- --');
     });
   } else {
     next();

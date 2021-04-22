@@ -6,6 +6,8 @@ const resolve = file => path.resolve(__dirname, file)
 const exphbs  = require('express-handlebars');
 const handlebars  = require('handlebars');
 const axios  = require('axios');
+const { sendToVdruid } = require('../../utils/analysis.js')
+
 router.use(async (req, res, next) => {
   if (req.originalUrl.indexOf('handlebar') > -1) {
     let reqStart = +new Date()
@@ -26,9 +28,13 @@ router.use(async (req, res, next) => {
     let renderEnd = +new Date()
     let reqEnd = +new Date()
     res.send(html)
-  
-    console.log('handlebar: render time:', renderEnd-renderStart);
-    console.log('handlebar: req time:', reqEnd-reqStart);
+    let render = renderEnd-renderStart
+    let total = reqEnd-reqStart
+    console.log('----------------analysis s-------------------------');
+    console.log('handlebar:render:duration:', render);
+    console.log('handlebar:http:duration:', total);
+    sendToVdruid(total, render)
+    console.log('----------------analysis e---------------------- --');
   } else {
     next();
   }
