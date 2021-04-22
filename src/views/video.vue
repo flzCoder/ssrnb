@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      title: '首页'
+      title: 'vuessr demo'
     }
   },
   asyncData ({ store, route }) {

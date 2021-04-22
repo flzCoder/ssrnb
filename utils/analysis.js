@@ -1,4 +1,5 @@
 const http = require('http')
+const request = require('request')
 const axios = require('axios')
 const sendToVdruid = async (total, render, tech) => {
   const agent = new http.Agent({
@@ -30,7 +31,23 @@ const sendToVdruid = async (total, render, tech) => {
   }
 
   const vdruidurl = 'http://vdruid.service.163.org/web/node?param=' + encodeURIComponent(JSON.stringify(vdruidData));
-  axios({
+  // axios({
+  //   method: 'GET',
+  //   url: vdruidurl,
+  //   headers: {
+  //     'User-Agent': 'wap3g-node'
+  //   },
+  //   timeout: 2000,
+  //   agent
+  // })
+  // .then(res => {
+  //   console.log('上报成功');
+  // })
+  // .catch(err => {
+  //   console.log('上报失败');
+  // });
+
+  request({
     method: 'GET',
     url: vdruidurl,
     headers: {
@@ -38,13 +55,15 @@ const sendToVdruid = async (total, render, tech) => {
     },
     timeout: 2000,
     agent
-  })
-  .then(res => {
-    console.log('上报成功');
-  })
-  .catch(err => {
-    console.log('上报失败');
+  }, (err, res) => {
+    if (err) {
+      console.log('上报失败', err);
+    } else {
+      console.log('上报成功');
+    }
   });
+
+
 }
 
 module.exports = {

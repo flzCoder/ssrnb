@@ -2,7 +2,7 @@ import hooks from './nuxt/hooks'
 
 export default {
   head: {
-    title: 'real-world-nuxt',
+    title: 'nuxt demo',
     htmlAttrs: {
       lang: 'en',
     },

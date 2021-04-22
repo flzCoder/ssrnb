@@ -20,8 +20,8 @@ async function start() {
   const nuxt = await loadNuxt('start')
   app.use(nuxt.render)
   
-  app.listen(3002, '0.0.0.0')
-  console.log('Server listening on `localhost:' + 3002 + '`.')
+  app.listen(8181, '0.0.0.0')
+  console.log('Server listening on `localhost:' + 8181 + '`.')
 }
 
 start()
