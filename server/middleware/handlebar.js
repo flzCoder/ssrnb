@@ -33,7 +33,7 @@ router.use(async (req, res, next) => {
     console.log('----------------analysis s-------------------------');
     console.log('handlebar:render:duration:', render);
     console.log('handlebar:http:duration:', total);
-    sendToVdruid(total, render)
+    sendToVdruid(total, render, 'handlebar')
     console.log('----------------analysis e---------------------- --');
   } else {
     next();

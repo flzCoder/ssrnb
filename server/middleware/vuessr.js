@@ -50,7 +50,7 @@ router.use((req, res, next) => {
       console.log('----------------analysis s-------------------------');
       console.log('vuessr:render:duration:', render);
       console.log('vuessr:http:duration:', total);
-      sendToVdruid(total, render)
+      sendToVdruid(total, render, 'vuessr')
       console.log('----------------analysis e---------------------- --');
     });
   } else {

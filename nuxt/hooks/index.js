@@ -21,7 +21,7 @@ export default nuxtConfig => ({
     let total = context.req.reqEndTime-context.req.reqStartTime;
     console.log('nuxt:render:duration', render);
     console.log('nuxt:http:duration', total);
-    sendToVdruid(total, render)
+    sendToVdruid(total, render, 'nuxt')
     console.log('----------------analysis e---------------------- --');
   },
 })

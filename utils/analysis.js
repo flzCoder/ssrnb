@@ -1,6 +1,6 @@
 const http = require('http')
 const axios = require('axios')
-const sendToVdruid = async (total, render) => {
+const sendToVdruid = async (total, render, tech) => {
   const agent = new http.Agent({
     keepAlive: true,
     maxSockets: 500,
@@ -12,10 +12,10 @@ const sendToVdruid = async (total, render) => {
     "projectid": "",
     "val_nm": "status",
     "tm": Date.now(),
-    "val_url": "/demo/ssr/nuxt",
+    "val_url": `/demo/ssr/${tech}`,
     "source": "node wap3g",
     "val_act": "ok",
-    "val_ref": "demo-ssr-nuxt",
+    "val_ref": `demo-ssr-${tech}`,
     "info": {
       "spstitle": "",
       "modelid": "",
