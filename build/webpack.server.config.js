@@ -18,7 +18,10 @@ module.exports = merge(base, {
     }
   },
   externals: nodeExternals({
-    whitelist: /\.css$/
+    whitelist: [
+      /\.css$/,
+      /fs-extra/
+    ]
   }),
   module: {
     rules: [
