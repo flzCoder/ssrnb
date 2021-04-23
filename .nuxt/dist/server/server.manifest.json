@@ -1,0 +1,17 @@
+{
+  "entry": "server.js",
+  "files": {
+    "components/card.js": "components/card.js",
+    "components/logo.js": "components/logo.js",
+    "pages/index.js": "pages/index.js",
+    "pages/nuxt/video/_id.js": "pages/nuxt/video/_id.js",
+    "server.js": "server.js"
+  },
+  "maps": {
+    "components/card.js": "components/card.js.map",
+    "components/logo.js": "components/logo.js.map",
+    "pages/index.js": "pages/index.js.map",
+    "pages/nuxt/video/_id.js": "pages/nuxt/video/_id.js.map",
+    "server.js": "server.js.map"
+  }
+}

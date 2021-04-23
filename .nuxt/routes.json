@@ -1,0 +1,16 @@
+[
+  {
+    "name": "nuxt-video-id",
+    "path": "/nuxt/video/:id?",
+    "component": "/Users/fengluzheb12652/workspace/vuessr/nuxt/pages/nuxt/video/_id.vue",
+    "chunkName": "pages/nuxt/video/_id",
+    "_name": "_3952fe49"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/fengluzheb12652/workspace/vuessr/nuxt/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_2ea7941a"
+  }
+]
