@@ -16,7 +16,8 @@
     "build:nuxt": "nuxt build",
     "start:nuxt": "cross-env NODE_ENV=production node server/nuxt.js",
     "dev:handlebar": "nodemon server/handlebar.js",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "pm2": "pm2 start ecosystem.config.js --env prod"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.1",
